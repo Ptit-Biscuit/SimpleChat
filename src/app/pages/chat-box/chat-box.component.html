@@ -1,0 +1,27 @@
+<div class="main-content flex-column">
+  <div class="message-box" #scrollMe>
+    <div class="message" [ngClass]="hoveredMessage === message ? 'highlight' : ''"
+         *ngFor="let message of messageService.messages$ | async" (mouseover)="hoveredMessage = message">
+      <ng-template [ngIf]="message.user === currentUser">
+        <div class="message-self">
+          <span>{{message.value}}</span>
+          <div class="actions" *ngIf="hoveredMessage === message">
+            <button class="button-delete" type="button" (click)="messageService.delete(message)">
+              <img src="assets/delete.png" alt="delete"/>
+            </button>
+          </div>
+        </div>
+      </ng-template>
+      <ng-template [ngIf]="message.user !== currentUser">
+        <div class="message-other">
+          <b>{{message.user}}: </b><span>{{message.value}}</span>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <form class="message-form flex-even-spaced" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input class="message-input" type="text" formControlName="input" placeholder="Type a message">
+    <button type="submit" class="rainbow-bg">Send</button>
+  </form>
+</div>

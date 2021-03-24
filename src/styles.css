@@ -1,1 +1,91 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+h2 {
+  margin-top: -10vh;
+  cursor: default;
+}
+
+label {
+  font-size: x-large;
+}
+
+span {
+  cursor: text;
+}
+
+input {
+  margin-top: 2vh;
+  height: 4vh;
+  display: flex;
+  border: transparent solid;
+  border-radius: 5%;
+}
+
+button {
+  height: 20%;
+  width: inherit;
+  border: none;
+  border-radius: 5%;
+  font-size: inherit;
+}
+
+.highlight {
+  background-color: #ffaaa5;
+}
+
+.error {
+  color: darkred;
+}
+
+.banner {
+  height: 8vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.banner h1, .banner h3 {
+  padding-left: 2%;
+  cursor: default;
+}
+
+.banner h3 {
+  font-weight: normal;
+}
+
+.main-content {
+  height: 92vh;
+  display: flex;
+  background-image: linear-gradient(to bottom right, #a8e6cf, #ffd3b6);
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-even-spaced {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.rainbow-bg {
+  background-color: transparent;
+  animation: morph 3s infinite alternate;
+}
+
+@keyframes morph {
+  0% { background-color: #a8e6cf; }
+  33% { background-color: #dcedc1; }
+  66% { background-color: #ffd3b6; }
+  100% { background-color: #ffaaa5; }
+}

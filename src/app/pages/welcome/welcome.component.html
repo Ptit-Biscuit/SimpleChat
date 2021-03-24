@@ -1,0 +1,18 @@
+<div class="main-content flex-column flex-even-spaced">
+  <h1>SimpleChat</h1>
+  <h2>because discord is overrated ;)</h2>
+
+  <form class="loginForm flex-column flex-even-spaced" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <label class="flex-column flex-even-spaced">
+      Enter your pseudo
+      <input type="text" formControlName="username" placeholder="pseudo">
+    </label>
+    <p class="error"
+       *ngIf="loginForm.touched
+        && loginForm.get('username').hasError('required')
+       || loginForm.get('username').hasError('minLength')">
+      how do you want to chat without a pseudo?
+    </p>
+    <button type="submit" class="rainbow-bg">Start chatting!</button>
+  </form>
+</div>

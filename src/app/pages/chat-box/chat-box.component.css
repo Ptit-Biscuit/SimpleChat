@@ -1,0 +1,52 @@
+.message-box {
+  height: 75vh;
+  margin: 2vh 2vh 0;
+  padding: 2vh;
+  background-color: #ffffff77;
+  overflow: hidden scroll;
+}
+
+.message {
+  height: 4vh;
+  display: flex;
+  flex: auto;
+  margin-top: 1vh;
+  cursor: default;
+  align-items: center;
+  flex-flow: row;
+}
+
+.message-self {
+  display: flex;
+  flex: auto;
+  flex-flow: row-reverse;
+}
+
+.actions {
+  margin-right: 4vh;
+}
+
+.button-delete {
+  height: auto;
+  background-color: transparent;
+  outline: none;
+}
+
+.button-delete>img {
+  width: 2vh;
+}
+
+.message-form {
+  margin: 0 2vh;
+  align-items: stretch;
+}
+
+.message-form>input {
+  flex: 4 1 auto;
+  margin-top: 0;
+}
+
+.message-form>button {
+  height: auto;
+  flex: 1 1 auto;
+}
